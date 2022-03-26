@@ -16,4 +16,6 @@ export interface IShopState {
   currentIndex: number;
   spritePath: string;
   notEnoughMoney: boolean;
+  loading: boolean;
+  error: boolean;
 }

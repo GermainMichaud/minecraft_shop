@@ -1,15 +1,24 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 import { IShopState } from '../interfaces';
 import { RootState } from '.';
-import defaultToolsData from './data/tools';
+
+export const fetchTools = createAsyncThunk('shop/fetchTools', async () => {
+  const response = await fetch(
+    'https://f174ffba-be80-4ed2-964d-066308cf40cd.mock.pstmn.io/api/tools',
+  );
+  const data = await response.json();
+  return data;
+});
 
 export const initialState: IShopState = {
-  tools: [...defaultToolsData],
+  tools: [],
   wallet: 1500,
   currentIndex: 0,
   spritePath: 'src/assets/img/sprite_tools.png',
   notEnoughMoney: false,
+  loading: true,
+  error: false,
 };
 
 const shopSlice = createSlice({
@@ -49,6 +58,20 @@ const shopSlice = createSlice({
       state.notEnoughMoney = false;
     },
   },
+  extraReducers: (builder) => {
+    builder.addCase(fetchTools.fulfilled, (state, action) => {
+      state.loading = false;
+      state.tools = action.payload;
+    });
+    builder.addCase(fetchTools.pending, (state) => {
+      state.loading = true;
+      state.error = false;
+    });
+    builder.addCase(fetchTools.rejected, (state) => {
+      state.loading = false;
+      state.error = true;
+    });
+  },
 });
 
 // Export all actions
@@ -62,5 +85,7 @@ export const selectSpritePath = (state: RootState) => state.shop.spritePath;
 export const selectCurrentTool = (state: RootState) =>
   state.shop.tools[state.shop.currentIndex];
 export const selectNotEnoughMoney = (state: RootState) => state.shop.notEnoughMoney;
+export const selectLoading = (state: RootState) => state.shop.loading;
+export const selectError = (state: RootState) => state.shop.error;
 
 export default shopSlice.reducer;
