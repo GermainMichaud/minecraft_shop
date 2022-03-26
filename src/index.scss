@@ -28,6 +28,12 @@ body {
   background-image: url(./assets/img/background.png);
 }
 
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
 #root {
   display: flex;
   align-items: center;

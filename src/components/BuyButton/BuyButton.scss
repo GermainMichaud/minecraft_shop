@@ -1,3 +1,7 @@
 .BuyButton {
   grid-area: BuyButton;
+
+  &:active {
+    transform: scale(0.97);
+  }
 }
