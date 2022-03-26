@@ -15,26 +15,32 @@ const ToolDetail: FunctionComponent<{}> = () => {
   const spritePath = useAppSelector(selectSpritePath);
   return (
     <Box className="ToolDetail" data-testid="tool-detail">
-      <div className="ToolDetail__title">{currentTool.name}</div>
-      <div className="ToolDetail__body">
-        <ImageFromSprite
-          position={currentTool.spritePosition}
-          width={IMG_SIZE}
-          height={IMG_SIZE}
-          sprite={spritePath}
-        />
-        <div className="ToolDetail__body__details">
-          <div className="ToolDetail__body__details__row">
-            INTEGRITY <span>{currentTool.integrity}</span>
+      {currentTool ? (
+        <>
+          <div className="ToolDetail__title">{currentTool.name}</div>
+          <div className="ToolDetail__body">
+            <ImageFromSprite
+              position={currentTool.spritePosition}
+              width={IMG_SIZE}
+              height={IMG_SIZE}
+              sprite={spritePath}
+            />
+            <div className="ToolDetail__body__details">
+              <div className="ToolDetail__body__details__row">
+                INTEGRITY <span>{currentTool.integrity}</span>
+              </div>
+              <div className="ToolDetail__body__details__row">
+                DAMAGE <span>+{currentTool.damage}</span>
+              </div>
+              <div className="ToolDetail__body__details__row">
+                COST <span>{currentTool.cost}</span>
+              </div>
+            </div>
           </div>
-          <div className="ToolDetail__body__details__row">
-            DAMAGE <span>+{currentTool.damage}</span>
-          </div>
-          <div className="ToolDetail__body__details__row">
-            COST <span>{currentTool.cost}</span>
-          </div>
-        </div>
-      </div>
+        </>
+      ) : (
+        <div className="ToolDetail__title">There are no more tools</div>
+      )}
     </Box>
   );
 };
