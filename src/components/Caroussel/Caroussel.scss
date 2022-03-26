@@ -1,0 +1,66 @@
+.Caroussel {
+  grid-area: Caroussel;
+  position: relative;
+  background-color: red;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  padding: 2rem;
+  &__body {
+    width: 100%;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(
+        to right,
+        var(--box-background) 10%,
+        transparent calc(50% - 40px),
+        transparent calc(50% + 40px),
+        var(--box-background) 90%
+      );
+    }
+  }
+}
+
+.caroussel-control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  &:hover {
+    transform: scale(1.1);
+  }
+  &:active {
+    transform: scale(1);
+  }
+}
+
+.list-images {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 80px;
+  left: 50%;
+  position: absolute;
+  gap: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.ControlButton-prev {
+  grid-area: ControlButtonPrev;
+}
+.ControlButton-next {
+  grid-area: ControlButtonNext;
+}
