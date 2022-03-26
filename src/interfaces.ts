@@ -15,4 +15,5 @@ export interface IShopState {
   wallet: number;
   currentIndex: number;
   spritePath: string;
+  notEnoughMoney: boolean;
 }
