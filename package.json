@@ -5,7 +5,11 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint:fix": "eslint ./src --ext .jsx,.js,.ts,.tsx --quiet --fix --ignore-path ./.gitignore",
+    "lint:format": "prettier  --loglevel warn --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\" ",
+    "lint": "npm run lint:format && npm run lint:fix ",
+    "type-check": "tsc"
   },
   "dependencies": {
     "react": "^17.0.2",
@@ -29,5 +33,6 @@
     "sass": "^1.49.9",
     "typescript": "^4.5.4",
     "vite": "^2.8.0"
-  }
+  },
+  "pre-commit": "lint"
 }
