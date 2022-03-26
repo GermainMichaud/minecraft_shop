@@ -22,10 +22,10 @@
       inset: 0;
       background-image: linear-gradient(
         to right,
-        var(--box-background) 10%,
-        transparent calc(50% - 40px),
-        transparent calc(50% + 40px),
-        var(--box-background) 90%
+        var(--box-background) 5%,
+        transparent calc(50% - 60px),
+        transparent calc(50% + 60px),
+        var(--box-background) 95%
       );
     }
   }
