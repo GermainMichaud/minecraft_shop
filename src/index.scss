@@ -35,3 +35,75 @@ body {
   width: 100%;
   min-height: 100vh;
 }
+
+:root {
+  --box-background: hsl(0, 0%, 80%);
+  --box-border-width: 0.5rem;
+  --box-border-width-double: 1rem;
+  --box-border-color: hsl(0, 0%, 73%);
+  --box-border-top-color: hsl(0, 0%, 85%);
+  --box-border-bottom-color: hsl(0, 0%, 71%);
+  --box-text-color: hsl(0, 0%, 0%);
+  --box-background-color-hover: hsl(0, 0%, 80%);
+}
+
+.green {
+  --box-background: hsl(133, 37%, 40%);
+  --box-border-color: hsl(132, 38%, 35%);
+  --box-border-top-color: hsl(133, 53%, 59%);
+  --box-border-bottom-color: hsl(134, 45%, 24%);
+  --box-text-color: hsl(0, 0%, 100%);
+  --box-background-color-hover: hsl(133, 38%, 47%);
+}
+
+.yellow {
+  --box-background: hsl(43, 79%, 52%);
+  --box-border-color: hsl(43, 74%, 49%);
+  --box-border-top-color: hsl(51, 100%, 50%);
+  --box-border-bottom-color: hsl(43, 89%, 38%);
+  --box-text-color: hsl(0, 0%, 0%);
+  --box-background-color-hover: hsl(43, 79%, 52%);
+}
+
+.box {
+  width: 100%;
+  align-self: flex-start;
+  padding: 1rem;
+  background-color: var(--box-background);
+  border-width: var(--box-border-width);
+  border-style: solid;
+  border-color: var(--box-border-color);
+  border-top-color: var(--box-border-top-color);
+  border-bottom-color: var(--box-border-bottom-color);
+  color: var(--box-text-color);
+  clip-path: polygon(
+    0 var(--box-border-width-double),
+    var(--box-border-width) var(--box-border-width-double),
+    var(--box-border-width) var(--box-border-width),
+    var(--box-border-width-double) var(--box-border-width),
+    var(--box-border-width-double) 0,
+    calc(100% - var(--box-border-width-double)) 0,
+    calc(100% - var(--box-border-width-double)) var(--box-border-width),
+    calc(100% - var(--box-border-width)) var(--box-border-width),
+    calc(100% - var(--box-border-width)) var(--box-border-width-double),
+    100% var(--box-border-width-double),
+    100% calc(100% - var(--box-border-width-double)),
+    calc(100% - var(--box-border-width)) calc(100% - var(--box-border-width-double)),
+    calc(100% - var(--box-border-width)) calc(100% - var(--box-border-width)),
+    calc(100% - var(--box-border-width-double)) calc(100% - var(--box-border-width)),
+    calc(100% - var(--box-border-width-double)) 100%,
+    var(--box-border-width-double) 100%,
+    var(--box-border-width-double) calc(100% - var(--box-border-width)),
+    var(--box-border-width) calc(100% - var(--box-border-width)),
+    var(--box-border-width) calc(100% - var(--box-border-width-double)),
+    0 calc(100% - var(--box-border-width-double))
+  );
+
+  &:hover {
+    background-color: var(--box-background-color-hover);
+  }
+}
+
+.text-shadow {
+  text-shadow: 2px 2px hsla(0, 0%, 0%, 0.4);
+}
