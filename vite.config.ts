@@ -5,6 +5,7 @@ import { defineConfig } from 'vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/minecraft_shop/',
   plugins: [react()],
   test: {
     globals: true,
