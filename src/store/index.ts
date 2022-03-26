@@ -1,8 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 
+import shopReducer from './shopSlice';
+
 export const createStore = () =>
   configureStore({
-    reducer: {},
+    reducer: {
+      shop: shopReducer,
+    },
   });
 
 export const store = createStore();
