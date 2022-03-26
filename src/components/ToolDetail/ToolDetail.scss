@@ -1,0 +1,45 @@
+.ToolDetail {
+  grid-area: ToolDetail;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  &__title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 1rem;
+    padding: 1rem;
+
+    &__details {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex: 1;
+      font-size: 1rem;
+      gap: 0.3rem;
+
+      &__row {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        span {
+          padding: 0 0.1rem;
+          color: #fff;
+          background-color: #418c51;
+        }
+      }
+    }
+  }
+}
