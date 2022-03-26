@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Minecraft';
+  src: url(./assets/fonts/minecraft/minecraft_font.ttf) format('truetype'),
+    url(./assets/fonts/minecraft/minecraft_font.woff) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 *,
 *:before,
 *:after {
@@ -6,7 +14,7 @@
   box-sizing: border-box;
   outline: none;
   list-style: none;
-  font-family: 'Montserrat', Helvetica, sans-serif;
+  font-family: 'Minecraft', 'Montserrat', Helvetica, sans-serif;
   text-decoration: none;
   -webkit-appearance: none;
   appearance: none;
@@ -17,4 +25,8 @@ body {
   position: relative;
   width: 100%;
   min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(./assets/img/background.png);
 }
