@@ -9,13 +9,13 @@ import ListImages from './ListImages';
 const Caroussel: FunctionComponent = () => {
   return (
     <>
-      <Button title="Prev" className="CarousselButton-prev" />
+      <Button title="Prev" className="CarousselButton-prev text-shadow" />
       <Box className="Caroussel" data-testid="caroussel">
         <div className="Caroussel__body">
           <ListImages />
         </div>
       </Box>
-      <Button title="Next" className="CarousselButton-next" />
+      <Button title="Next" className="CarousselButton-next text-shadow" />
     </>
   );
 };

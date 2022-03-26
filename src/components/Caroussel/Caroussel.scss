@@ -58,9 +58,28 @@
   transition: all 0.2s ease-in-out;
 }
 
-.ControlButton-prev {
-  grid-area: ControlButtonPrev;
-}
-.ControlButton-next {
-  grid-area: ControlButtonNext;
+.CarousselButton {
+  &-prev {
+    grid-area: ControlButtonPrev;
+  }
+  &-next {
+    grid-area: ControlButtonNext;
+  }
+  &-prev,
+  &-next {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    &:hover {
+      transform: scale(1.1);
+    }
+    &:active {
+      transform: scale(1);
+    }
+  }
 }
