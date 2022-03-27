@@ -8,7 +8,10 @@ export const initialState: IShopState = {
   tools: [...defaultToolsData],
   wallet: 1500,
   currentIndex: 0,
-  spritePath: 'src/assets/img/sprite_tools.png',
+  spritePath:
+    import.meta.env.MODE === 'development'
+      ? './src/assets/img/sprite_tools.png'
+      : 'https://github.com/GermainMichaud/minecraft_shop/raw/main/src/assets/img/sprite_tools.png',
   notEnoughMoney: false,
 };
 
