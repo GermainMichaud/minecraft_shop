@@ -2,6 +2,9 @@
 
 > Application made with React (Typescript) and Redux for a technical test
 
+## Live Demo
+👉 [https://germainmichaud.github.io/minecraft_shop/](https://germainmichaud.github.io/minecraft_shop/)
+
 ## Clone repository
 
 ```sh
